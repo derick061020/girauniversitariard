@@ -158,9 +158,10 @@ class _WebViewScreenState extends State<WebViewScreen> {
         }
       },
       child: Scaffold(
-        body: Stack(
-          children: [
-            WebViewWidget(controller: _controller),
+        body: SafeArea(
+          child: Stack(
+            children: [
+              WebViewWidget(controller: _controller),
             if (_isLoading)
               Container(
                 color: const Color(0xFFF0512A),
@@ -170,7 +171,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
                   ),
                 ),
               ),
-          ],
+            ],
+          ),
         ),
       ),
     );
